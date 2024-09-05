@@ -29,21 +29,68 @@ A base de dados utilizada contém informações detalhadas sobre as avaliações
 
 ## Metodologia
 
-O projeto consiste em duas abordagens principais de classificação de sentimentos:
+### 1. Processamento dos Dados
 
-1. **Análise baseada no texto**: Utiliza o texto das reviews e do título da avaliação como entrada para um modelo de classificação de sentimentos.
-2. **Análise baseada nas notas das features**: Utiliza as notas individuais fornecidas pelos passageiros para características como conforto do assento, serviço da equipe, entretenimento a bordo, entre outras.
+- **Verificação de dados faltantes e duplicados**: O conjunto de dados será analisado para identificar valores ausentes ou duplicados que possam impactar a análise.
+  
+### 2. Pré-processamento de Texto (NLP)
 
-## Avaliação de Resultados
+Serão realizadas as seguintes etapas de processamento nas colunas `Review` e `Review_Title`:
+- **Tokenização**: Separar as palavras em tokens.
+- **Remoção de stop-words**: Excluir palavras irrelevantes (como "a", "o", "de").
+- **Lemmatização/Stemming**: Redução das palavras à sua forma raiz.
+- **Transformação para minúsculas**: Uniformizar as palavras.
+  
+### 3. Exploração dos Dados
 
-O desempenho do sistema será avaliado em termos de:
+#### a. Distribuição da feature `Overall_Rating`
 
-- **Classificação de Sentimento**:
-  - Nota final < 4: Negativo
-  - Nota final entre 4 e 7: Neutro
-  - Nota final > 7: Positivo
+- **Gráfico 1**: Distribuição do `Overall_Rating` por companhia aérea.
+- **Gráfico 2**: Distribuição do `Overall_Rating` por modelo de aeronave (`Aircraft`).
 
-- **Impacto dos atrasos no NPS**: Medir como atrasos no voo afetam a satisfação dos passageiros e o NPS das companhias aéreas, calculado como a diferença entre a porcentagem de avaliações positivas e negativas.
+#### b. Nuvem de Palavras
+
+- **Análise 1**: Palavras mais frequentes em avaliações com `Overall_Rating` igual ou inferior a 3.
+- **Análise 2**: Palavras mais frequentes em avaliações com `Overall_Rating` igual ou superior a 8.
+
+#### c. Estudo de Correlação
+
+Estudar a correlação entre as seguintes colunas e a nota final (`Overall_Rating`):
+- `Seat Comfort`
+- `Cabin Staff Service`
+- `Food & Beverages`
+- `Ground Service`
+- `Inflight Entertainment`
+- `Wifi & Connectivity`
+
+### 4. Modelos de Classificação de Sentimento
+
+Dois modelos de classificação de sentimentos serão desenvolvidos para comparar abordagens:
+
+#### Modelo 1: Análise de Texto
+Usará as colunas `Review` e `Review_Title` como input para a classificação de sentimentos, onde:
+- Nota final < 4: **Negativo**
+- Nota final entre 4 e 7: **Neutro**
+- Nota final > 7: **Positivo**
+
+#### Modelo 2: Análise Baseada em Features
+Usará as notas das seguintes features:
+- `Seat Comfort`
+- `Cabin Staff Service`
+- `Food & Beverages`
+- `Ground Service`
+- `Inflight Entertainment`
+- `Wifi & Connectivity`
+
+Os dois modelos serão comparados em termos de precisão na classificação de sentimentos.
+
+### 5. Impacto dos Atrasos no NPS
+
+Uma análise será realizada para avaliar o impacto dos atrasos de voo no **NPS** de 3 companhias aéreas. O cálculo do **NPS** será feito da seguinte forma:
+
+- **NPS** = % avaliações **Positivas** - % avaliações **Negativas**
+
+---
 
 ## Contribuição
 
@@ -51,6 +98,6 @@ Contribuições são bem-vindas! Para sugerir melhorias ou correções, abra uma
 
 ---
 
-**Autor**: [Seu Nome]  
+**Autor**: Pedro Paulo B. Interaminense  
 **Empresa**: DHAUZ  
 **Contato**: seuemail@demail.com
