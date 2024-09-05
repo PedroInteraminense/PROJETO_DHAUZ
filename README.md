@@ -1,6 +1,6 @@
 # Análise de Sentimentos em Viagens Aéreas
 
-Este projeto foi desenvolvido para a DHAU, a base de dados foi retirada de um site que contém uma plataforma de venda de passagens aéreas, com o objetivo de implementar um sistema de **análise de sentimentos** a partir das avaliações de passageiros. A análise permitirá que as companhias aéreas identifiquem áreas de melhoria na experiência do cliente.
+Este projeto foi desenvolvido para a DHAUZ e a base de dados foi retirada de um site que contém uma plataforma de venda de passagens aéreas. O objetivo deste projeto é implementar um sistema de **análise de sentimentos** a partir das avaliações de passageiros. A análise permitirá que as companhias aéreas identifiquem áreas de melhoria na experiência do cliente.
 
 ## Objetivo
 
@@ -27,7 +27,7 @@ A base de dados utilizada contém informações detalhadas sobre as avaliações
 - **Inflight Entertainment**: Avaliação do entretenimento a bordo.
 - **Wifi & Connectivity**: Avaliação da qualidade do wifi e conectividade.
 
-## Metodologia
+## QUESTÕES
 
 ### 1. Processamento dos Dados
 
