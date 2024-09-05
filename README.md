@@ -100,4 +100,4 @@ Contribuições são bem-vindas! Para sugerir melhorias ou correções, abra uma
 
 **Autor**: Pedro Paulo B. Interaminense  
 **Empresa**: DHAUZ  
-**Contato**: seuemail@demail.com
+**Contato**: pinteraminense@gmail.com
